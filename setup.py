@@ -3,14 +3,14 @@ from distutils.core import setup
 from setuptools import find_packages
 
 setup(
-    name='django-tiny-hit-count',
+    name='django-canihitit',
     version='0.0.1',
     author=u'Jon Combe',
     author_email='jon@naremit.com',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[],
-    url='https://github.com/joncombe/django-tiny-hit-count',
+    url='https://github.com/joncombe/django-canihitit',
     license='BSD licence, see LICENCE file',
     description='Tiny object hit counter for Django',
     long_description='Tiny object hit counter for Django',

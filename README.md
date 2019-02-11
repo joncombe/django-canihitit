@@ -1,4 +1,4 @@
-django-tiny-hit-count
-=====================
+django-canihitit
+================
 
-A tiny object hit counter for Django.
+Can I hit it? Yes you can! A tiny object hit counter for Django.
