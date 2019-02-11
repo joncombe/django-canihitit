@@ -15,7 +15,7 @@ def canihitit(request, object_type, object_id):
 
 
 def _canihitit(session_key, object_type, object_id, user_agent=None):
-    seconds = getattr(settings, 'TINY_HIT_COUNTER_SECONDS', 300)
+    seconds = getattr(settings, 'CAN_I_HIT_IT_SECONDS', 300)
     cutoff = now() - datetime.timedelta(seconds=seconds)
 
     # ignore a few known bots. TODO: improve this
