@@ -6,12 +6,15 @@ from .models import CanIHitIt
 
 
 def canihitit(request, object_type, object_id):
-    return _canihitit(
-        request.session.session_key or request.META['REMOTE_ADDR'] or '',
-        object_type,
-        object_id,
-        request.META['HTTP_USER_AGENT']
-    )
+    if request.method in ['GET', 'POST']:
+        return _canihitit(
+            request.session.session_key or request.META.get('REMOTE_ADDR', None) or '',
+            object_type,
+            object_id,
+            request.META.get('HTTP_USER_AGENT', None)
+        )
+    else:
+        return False
 
 
 def _canihitit(session_key, object_type, object_id, user_agent=None):
