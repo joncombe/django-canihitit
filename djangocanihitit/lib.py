@@ -21,9 +21,41 @@ def _canihitit(session_key, object_type, object_id, user_agent=None):
     # ignore a few known bots. TODO: improve this
     if user_agent:
         user_agent = user_agent.lower()
-        bots = 'baiduspider,bingbot,duckduckbot,exabot,facebookexternalhit,' \
-               'facebot,googlebot,ia_archiver,sogou.com,yahoo! slurp,yandexbot'
-        for b in bots.split(','):
+        bots = [
+            'apachebench', # not a bot, but it can go here
+
+            '360spider',
+            'adsbot-google',
+            'ahrefs',
+            'archive.org',
+            'baiduspider',
+            'bingbot',
+            'bingpreview',
+            'dotbot',
+            'duckduckgo',
+            'duckduckbot',
+            'exabot',
+            'facebook',
+            'feedfetcher-google',
+            'googlebot',
+            'googleimageproxy',
+            'ia_archiver',
+            'mediapartners-google',
+            'mj12bot',
+            'msnbot',
+            'panscient.com',
+            'pinterest',
+            'slackbot',
+            'slurp',
+            'sogou',
+            'surveybot',
+            'twitterbot',
+            'voilabot',
+            'yahoo-mmcrawler',
+            'yahoomailproxy',
+            'yandexbot'
+        ]
+        for b in bots:
             if b in user_agent:
                 return False
 
